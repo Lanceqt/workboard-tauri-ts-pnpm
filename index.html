@@ -6,15 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tauri App</title>
     <script type="module" src="/src/main.ts" defer></script>
+    <script type="module" src="/src/components/my-element.ts"></script>
   </head>
 
   <body>
     <div class="container">
         <header>
             <h1>Rikova work assigment board</h1>
-            <span class="login"><a href="/admin.html">Login</a></span>
+            <span class="login" data-modal="showLogin"><a href="/admin.html">Login</a></span>
+            <dialog data-modal="loginPrompt">
+                <form method="dialog" action="">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username" autofocus />
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" />
+                    <input type="submit" value="Login" />
+                </form>
+            </dialog>
         </header>
         <main>
+            <my-element></my-element>
             <div class="task">
                 <div class="task-name">This is a task a worker is assigned too:</div>
                 <div class="assigned-workers">
